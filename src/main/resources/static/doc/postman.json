@@ -1,0 +1,301 @@
+{
+  "info": {
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+    "_postman_id": "e924f25c-0267-410b-b269-397fef7a8d11",
+    "name": "parkingSystem"
+  },
+  "item": [
+    {
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "keyword",
+                  "type": "text",
+                  "desc": "No comments found.",
+                  "value": "ixdhxa"
+                },
+                {
+                  "key": "page",
+                  "type": "text",
+                  "desc": "No comments found.",
+                  "value": "0"
+                },
+                {
+                  "key": "limit",
+                  "type": "text",
+                  "desc": "No comments found.",
+                  "value": "10"
+                }
+              ]
+            },
+            "url": "http://127.0.0.1/car/listCar?page\u003d0\u0026keyword\u003dixdhxa\u0026limit\u003d10",
+            "header": []
+          }
+        }
+      ]
+    },
+    {
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "keyword",
+                  "type": "text",
+                  "desc": "No comments found.",
+                  "value": "mzds1j"
+                },
+                {
+                  "key": "memberType",
+                  "type": "text",
+                  "desc": "No comments found.",
+                  "value": "-1"
+                },
+                {
+                  "key": "page",
+                  "type": "text",
+                  "desc": "No comments found.",
+                  "value": "0"
+                },
+                {
+                  "key": "limit",
+                  "type": "text",
+                  "desc": "No comments found.",
+                  "value": "10"
+                }
+              ]
+            },
+            "url": "http://127.0.0.1/member/listMember?memberType\u003d-1\u0026keyword\u003dmzds1j\u0026limit\u003d10\u0026page\u003d0",
+            "header": []
+          }
+        },
+        {
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"memberId\":45,\n\t\"openDate\":2021-03-19,\n\t\"endDate\":2021-03-19,\n\t\"memberType\":100,\n\t\"car\":{\n\t\t\"carId\":510,\n\t\t\"carNum\":\"4pkyoo\",\n\t\t\"carOwner\":\"uyjmks\",\n\t\t\"carTimes\":206,\n\t\t\"space\":{\n\t\t\t\"spaceId\":193,\n\t\t\t\"spaceNum\":\"tv4dej\",\n\t\t\t\"spaceArea\":\"dx803x\",\n\t\t\t\"spaceStatus\":461,\n\t\t\t\"spaceRemark\":966,\n\t\t\t\"recordList\":[\n\t\t\t\t{\n\t\t\t\t\t\"recordId\":123,\n\t\t\t\t\t\"enterDate\":2021-03-19,\n\t\t\t\t\t\"leaveDate\":2021-03-19,\n\t\t\t\t\t\"payment\":698,\n\t\t\t\t\t\"money\":22.28,\n\t\t\t\t\t\"space\":{\n\t\t\t\t\t\t\"spaceId\":7,\n\t\t\t\t\t\t\"spaceNum\":\"6irkha\",\n\t\t\t\t\t\t\"spaceArea\":\"tlluki\",\n\t\t\t\t\t\t\"spaceStatus\":101,\n\t\t\t\t\t\t\"spaceRemark\":558,\n\t\t\t\t\t\t\"recordList\":[\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t}\n\t\t\t\t\t},\n\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\"carId\":407,\n\t\t\t\t\t\t\"carNum\":\"c39p03\",\n\t\t\t\t\t\t\"carOwner\":\"pu5496\",\n\t\t\t\t\t\t\"carTimes\":152,\n\t\t\t\t\t\t\"space\":{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"member\":{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"recordList\":[\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t]\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"car\":{\n\t\t\t\t\"carId\":673,\n\t\t\t\t\"carNum\":\"esep6j\",\n\t\t\t\t\"carOwner\":\"ix135z\",\n\t\t\t\t\"carTimes\":928,\n\t\t\t\t\"space\":{\n\t\t\t\t\t\"spaceId\":979,\n\t\t\t\t\t\"spaceNum\":\"qznfvr\",\n\t\t\t\t\t\"spaceArea\":\"wyqvy2\",\n\t\t\t\t\t\"spaceStatus\":50,\n\t\t\t\t\t\"spaceRemark\":717,\n\t\t\t\t\t\"recordList\":[\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t}\n\t\t\t\t\t],\n\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"member\":{\n\t\t\t\t\t\"memberId\":895,\n\t\t\t\t\t\"openDate\":2021-03-19,\n\t\t\t\t\t\"endDate\":2021-03-19,\n\t\t\t\t\t\"memberType\":350,\n\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"recordList\":[\n\t\t\t\t\t{\n\t\t\t\t\t\t\"recordId\":460,\n\t\t\t\t\t\t\"enterDate\":2021-03-19,\n\t\t\t\t\t\t\"leaveDate\":2021-03-19,\n\t\t\t\t\t\t\"payment\":848,\n\t\t\t\t\t\t\"money\":4.57,\n\t\t\t\t\t\t\"space\":{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t\"member\":{\n\t\t\t\"memberId\":246,\n\t\t\t\"openDate\":2021-03-19,\n\t\t\t\"endDate\":2021-03-19,\n\t\t\t\"memberType\":711,\n\t\t\t\"car\":{\n\t\t\t\t\"carId\":463,\n\t\t\t\t\"carNum\":\"fq5ihn\",\n\t\t\t\t\"carOwner\":\"0ydwcm\",\n\t\t\t\t\"carTimes\":113,\n\t\t\t\t\"space\":{\n\t\t\t\t\t\"spaceId\":775,\n\t\t\t\t\t\"spaceNum\":\"nfr3cs\",\n\t\t\t\t\t\"spaceArea\":\"4a5x7b\",\n\t\t\t\t\t\"spaceStatus\":521,\n\t\t\t\t\t\"spaceRemark\":826,\n\t\t\t\t\t\"recordList\":[\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t}\n\t\t\t\t\t],\n\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"member\":{\n\t\t\t\t\t\"memberId\":561,\n\t\t\t\t\t\"openDate\":2021-03-19,\n\t\t\t\t\t\"endDate\":2021-03-19,\n\t\t\t\t\t\"memberType\":508,\n\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"recordList\":[\n\t\t\t\t\t{\n\t\t\t\t\t\t\"recordId\":792,\n\t\t\t\t\t\t\"enterDate\":2021-03-19,\n\t\t\t\t\t\t\"leaveDate\":2021-03-19,\n\t\t\t\t\t\t\"payment\":347,\n\t\t\t\t\t\t\"money\":9.35,\n\t\t\t\t\t\t\"space\":{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t\"recordList\":[\n\t\t\t{\n\t\t\t\t\"recordId\":711,\n\t\t\t\t\"enterDate\":2021-03-19,\n\t\t\t\t\"leaveDate\":2021-03-19,\n\t\t\t\t\"payment\":284,\n\t\t\t\t\"money\":22.10,\n\t\t\t\t\"space\":{\n\t\t\t\t\t\"spaceId\":852,\n\t\t\t\t\t\"spaceNum\":\"owci0n\",\n\t\t\t\t\t\"spaceArea\":\"1a6o07\",\n\t\t\t\t\t\"spaceStatus\":713,\n\t\t\t\t\t\"spaceRemark\":613,\n\t\t\t\t\t\"recordList\":[\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"recordId\":858,\n\t\t\t\t\t\t\t\"enterDate\":2021-03-19,\n\t\t\t\t\t\t\t\"leaveDate\":2021-03-19,\n\t\t\t\t\t\t\t\"payment\":710,\n\t\t\t\t\t\t\t\"money\":23.74,\n\t\t\t\t\t\t\t\"space\":{\n\t\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t],\n\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\"carId\":94,\n\t\t\t\t\t\t\"carNum\":\"upwm0c\",\n\t\t\t\t\t\t\"carOwner\":\"tw08hv\",\n\t\t\t\t\t\t\"carTimes\":184,\n\t\t\t\t\t\t\"space\":{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"member\":{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"recordList\":[\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t]\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"car\":{\n\t\t\t\t\t\"carId\":120,\n\t\t\t\t\t\"carNum\":\"5ndtgh\",\n\t\t\t\t\t\"carOwner\":\"g83ooa\",\n\t\t\t\t\t\"carTimes\":239,\n\t\t\t\t\t\"space\":{\n\t\t\t\t\t\t\"spaceId\":187,\n\t\t\t\t\t\t\"spaceNum\":\"fpm2k8\",\n\t\t\t\t\t\t\"spaceArea\":\"rq74tb\",\n\t\t\t\t\t\t\"spaceStatus\":85,\n\t\t\t\t\t\t\"spaceRemark\":979,\n\t\t\t\t\t\t\"recordList\":[\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t}\n\t\t\t\t\t},\n\t\t\t\t\t\"member\":{\n\t\t\t\t\t\t\"memberId\":609,\n\t\t\t\t\t\t\"openDate\":2021-03-19,\n\t\t\t\t\t\t\"endDate\":2021-03-19,\n\t\t\t\t\t\t\"memberType\":860,\n\t\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t}\n\t\t\t\t\t},\n\t\t\t\t\t\"recordList\":[\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"recordId\":911,\n\t\t\t\t\t\t\t\"enterDate\":2021-03-19,\n\t\t\t\t\t\t\t\"leaveDate\":2021-03-19,\n\t\t\t\t\t\t\t\"payment\":568,\n\t\t\t\t\t\t\t\"money\":26.28,\n\t\t\t\t\t\t\t\"space\":{\n\t\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t]\n\t\t\t\t}\n\t\t\t}\n\t\t]\n\t}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "http://127.0.0.1/member/updateMember",
+            "header": []
+          }
+        }
+      ]
+    },
+    {
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "body": {
+              "mode": "formdata"
+            },
+            "url": "http://127.0.0.1/park/listPark",
+            "header": []
+          }
+        },
+        {
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"parkId\":516,\n\t\"parkName\":\"乐驹.黄\",\n\t\"timeAll\":473,\n\t\"SpaceFull\":107,\n\t\"SpaceEmpty\":946\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "http://127.0.0.1/park/updatePark",
+            "header": []
+          }
+        }
+      ]
+    },
+    {
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "keyword",
+                  "type": "text",
+                  "desc": "No comments found.",
+                  "value": "opn2u2"
+                },
+                {
+                  "key": "payment",
+                  "type": "text",
+                  "desc": "No comments found.",
+                  "value": "-1"
+                },
+                {
+                  "key": "page",
+                  "type": "text",
+                  "desc": "No comments found.",
+                  "value": "0"
+                },
+                {
+                  "key": "limit",
+                  "type": "text",
+                  "desc": "No comments found.",
+                  "value": "10"
+                }
+              ]
+            },
+            "url": "http://127.0.0.1/record/listRecord?limit\u003d10\u0026payment\u003d-1\u0026page\u003d0\u0026keyword\u003dopn2u2",
+            "header": []
+          }
+        }
+      ]
+    },
+    {
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "body": {
+              "mode": "formdata"
+            },
+            "url": "http://127.0.0.1/java-user",
+            "header": []
+          }
+        },
+        {
+          "request": {
+            "method": "GET",
+            "body": {
+              "mode": "formdata"
+            },
+            "url": "http://127.0.0.1/python-user",
+            "header": []
+          }
+        },
+        {
+          "request": {
+            "method": "GET",
+            "body": {
+              "mode": "formdata"
+            },
+            "url": "http://127.0.0.1/health",
+            "header": []
+          }
+        }
+      ]
+    },
+    {
+      "item": [
+        {
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"spaceId\":168,\n\t\"spaceNum\":\"583t3u\",\n\t\"spaceArea\":\"aunsm8\",\n\t\"spaceStatus\":359,\n\t\"spaceRemark\":411,\n\t\"recordList\":[\n\t\t{\n\t\t\t\"recordId\":349,\n\t\t\t\"enterDate\":2021-03-19,\n\t\t\t\"leaveDate\":2021-03-19,\n\t\t\t\"payment\":825,\n\t\t\t\"money\":75.29,\n\t\t\t\"space\":{\n\t\t\t\t\"spaceId\":492,\n\t\t\t\t\"spaceNum\":\"lw7qs4\",\n\t\t\t\t\"spaceArea\":\"uicyye\",\n\t\t\t\t\"spaceStatus\":527,\n\t\t\t\t\"spaceRemark\":571,\n\t\t\t\t\"recordList\":[\n\t\t\t\t\t{\n\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\"car\":{\n\t\t\t\t\t\"carId\":211,\n\t\t\t\t\t\"carNum\":\"j52ddk\",\n\t\t\t\t\t\"carOwner\":\"5zna6x\",\n\t\t\t\t\t\"carTimes\":740,\n\t\t\t\t\t\"space\":{\n\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t},\n\t\t\t\t\t\"member\":{\n\t\t\t\t\t\t\"memberId\":706,\n\t\t\t\t\t\t\"openDate\":2021-03-19,\n\t\t\t\t\t\t\"endDate\":2021-03-19,\n\t\t\t\t\t\t\"memberType\":92,\n\t\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t}\n\t\t\t\t\t},\n\t\t\t\t\t\"recordList\":[\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"recordId\":718,\n\t\t\t\t\t\t\t\"enterDate\":2021-03-19,\n\t\t\t\t\t\t\t\"leaveDate\":2021-03-19,\n\t\t\t\t\t\t\t\"payment\":920,\n\t\t\t\t\t\t\t\"money\":58.02,\n\t\t\t\t\t\t\t\"space\":{\n\t\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t]\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"car\":{\n\t\t\t\t\"carId\":201,\n\t\t\t\t\"carNum\":\"zz1s52\",\n\t\t\t\t\"carOwner\":\"wd7ljj\",\n\t\t\t\t\"carTimes\":752,\n\t\t\t\t\"space\":{\n\t\t\t\t\t\"spaceId\":201,\n\t\t\t\t\t\"spaceNum\":\"vm80x0\",\n\t\t\t\t\t\"spaceArea\":\"95i9ie\",\n\t\t\t\t\t\"spaceStatus\":835,\n\t\t\t\t\t\"spaceRemark\":737,\n\t\t\t\t\t\"recordList\":[\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"recordId\":3,\n\t\t\t\t\t\t\t\"enterDate\":2021-03-19,\n\t\t\t\t\t\t\t\"leaveDate\":2021-03-19,\n\t\t\t\t\t\t\t\"payment\":932,\n\t\t\t\t\t\t\t\"money\":85.78,\n\t\t\t\t\t\t\t\"space\":{\n\t\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t],\n\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\"carId\":283,\n\t\t\t\t\t\t\"carNum\":\"fy9zz4\",\n\t\t\t\t\t\t\"carOwner\":\"nf1sdo\",\n\t\t\t\t\t\t\"carTimes\":476,\n\t\t\t\t\t\t\"space\":{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"member\":{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"recordList\":[\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t]\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"member\":{\n\t\t\t\t\t\"memberId\":849,\n\t\t\t\t\t\"openDate\":2021-03-19,\n\t\t\t\t\t\"endDate\":2021-03-19,\n\t\t\t\t\t\"memberType\":74,\n\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\"carId\":817,\n\t\t\t\t\t\t\"carNum\":\"0hnblf\",\n\t\t\t\t\t\t\"carOwner\":\"pz88ud\",\n\t\t\t\t\t\t\"carTimes\":564,\n\t\t\t\t\t\t\"space\":{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"member\":{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"recordList\":[\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t]\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"recordList\":[\n\t\t\t\t\t{\n\t\t\t\t\t\t\"recordId\":670,\n\t\t\t\t\t\t\"enterDate\":2021-03-19,\n\t\t\t\t\t\t\"leaveDate\":2021-03-19,\n\t\t\t\t\t\t\"payment\":881,\n\t\t\t\t\t\t\"money\":70.01,\n\t\t\t\t\t\t\"space\":{\n\t\t\t\t\t\t\t\"spaceId\":243,\n\t\t\t\t\t\t\t\"spaceNum\":\"mrpiqq\",\n\t\t\t\t\t\t\t\"spaceArea\":\"rzg7ha\",\n\t\t\t\t\t\t\t\"spaceStatus\":354,\n\t\t\t\t\t\t\t\"spaceRemark\":508,\n\t\t\t\t\t\t\t\"recordList\":[\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t],\n\t\t\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\t\"carId\":514,\n\t\t\t\t\t\t\t\"carNum\":\"g7u0jd\",\n\t\t\t\t\t\t\t\"carOwner\":\"xj8iqt\",\n\t\t\t\t\t\t\t\"carTimes\":896,\n\t\t\t\t\t\t\t\"space\":{\n\t\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"member\":{\n\t\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"recordList\":[\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t]\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t}\n\t],\n\t\"car\":{\n\t\t\"carId\":676,\n\t\t\"carNum\":\"13lfpe\",\n\t\t\"carOwner\":\"mcgnog\",\n\t\t\"carTimes\":42,\n\t\t\"space\":{\n\t\t\t\"spaceId\":615,\n\t\t\t\"spaceNum\":\"g39red\",\n\t\t\t\"spaceArea\":\"xxbxjh\",\n\t\t\t\"spaceStatus\":881,\n\t\t\t\"spaceRemark\":404,\n\t\t\t\"recordList\":[\n\t\t\t\t{\n\t\t\t\t\t\"recordId\":59,\n\t\t\t\t\t\"enterDate\":2021-03-19,\n\t\t\t\t\t\"leaveDate\":2021-03-19,\n\t\t\t\t\t\"payment\":914,\n\t\t\t\t\t\"money\":47.10,\n\t\t\t\t\t\"space\":{\n\t\t\t\t\t\t\"spaceId\":775,\n\t\t\t\t\t\t\"spaceNum\":\"z2fyzf\",\n\t\t\t\t\t\t\"spaceArea\":\"wo9n8q\",\n\t\t\t\t\t\t\"spaceStatus\":225,\n\t\t\t\t\t\t\"spaceRemark\":726,\n\t\t\t\t\t\t\"recordList\":[\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t}\n\t\t\t\t\t},\n\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\"carId\":712,\n\t\t\t\t\t\t\"carNum\":\"tt3tlg\",\n\t\t\t\t\t\t\"carOwner\":\"3ezhjk\",\n\t\t\t\t\t\t\"carTimes\":652,\n\t\t\t\t\t\t\"space\":{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"member\":{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"recordList\":[\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t]\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"car\":{\n\t\t\t\t\"carId\":495,\n\t\t\t\t\"carNum\":\"gcsgd7\",\n\t\t\t\t\"carOwner\":\"isq2sq\",\n\t\t\t\t\"carTimes\":91,\n\t\t\t\t\"space\":{\n\t\t\t\t\t\"spaceId\":911,\n\t\t\t\t\t\"spaceNum\":\"m5z7cb\",\n\t\t\t\t\t\"spaceArea\":\"ci1o22\",\n\t\t\t\t\t\"spaceStatus\":586,\n\t\t\t\t\t\"spaceRemark\":450,\n\t\t\t\t\t\"recordList\":[\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t}\n\t\t\t\t\t],\n\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"member\":{\n\t\t\t\t\t\"memberId\":534,\n\t\t\t\t\t\"openDate\":2021-03-19,\n\t\t\t\t\t\"endDate\":2021-03-19,\n\t\t\t\t\t\"memberType\":451,\n\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"recordList\":[\n\t\t\t\t\t{\n\t\t\t\t\t\t\"recordId\":294,\n\t\t\t\t\t\t\"enterDate\":2021-03-19,\n\t\t\t\t\t\t\"leaveDate\":2021-03-19,\n\t\t\t\t\t\t\"payment\":355,\n\t\t\t\t\t\t\"money\":73.26,\n\t\t\t\t\t\t\"space\":{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t\"member\":{\n\t\t\t\"memberId\":567,\n\t\t\t\"openDate\":2021-03-19,\n\t\t\t\"endDate\":2021-03-19,\n\t\t\t\"memberType\":145,\n\t\t\t\"car\":{\n\t\t\t\t\"carId\":403,\n\t\t\t\t\"carNum\":\"bgh3er\",\n\t\t\t\t\"carOwner\":\"6kqng9\",\n\t\t\t\t\"carTimes\":354,\n\t\t\t\t\"space\":{\n\t\t\t\t\t\"spaceId\":297,\n\t\t\t\t\t\"spaceNum\":\"089i7l\",\n\t\t\t\t\t\"spaceArea\":\"nes444\",\n\t\t\t\t\t\"spaceStatus\":426,\n\t\t\t\t\t\"spaceRemark\":742,\n\t\t\t\t\t\"recordList\":[\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t}\n\t\t\t\t\t],\n\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"member\":{\n\t\t\t\t\t\"memberId\":597,\n\t\t\t\t\t\"openDate\":2021-03-19,\n\t\t\t\t\t\"endDate\":2021-03-19,\n\t\t\t\t\t\"memberType\":674,\n\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"recordList\":[\n\t\t\t\t\t{\n\t\t\t\t\t\t\"recordId\":510,\n\t\t\t\t\t\t\"enterDate\":2021-03-19,\n\t\t\t\t\t\t\"leaveDate\":2021-03-19,\n\t\t\t\t\t\t\"payment\":916,\n\t\t\t\t\t\t\"money\":61.05,\n\t\t\t\t\t\t\"space\":{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t\"recordList\":[\n\t\t\t{\n\t\t\t\t\"recordId\":340,\n\t\t\t\t\"enterDate\":2021-03-19,\n\t\t\t\t\"leaveDate\":2021-03-19,\n\t\t\t\t\"payment\":456,\n\t\t\t\t\"money\":94.35,\n\t\t\t\t\"space\":{\n\t\t\t\t\t\"spaceId\":385,\n\t\t\t\t\t\"spaceNum\":\"nh74aw\",\n\t\t\t\t\t\"spaceArea\":\"rw4df7\",\n\t\t\t\t\t\"spaceStatus\":126,\n\t\t\t\t\t\"spaceRemark\":250,\n\t\t\t\t\t\"recordList\":[\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"recordId\":711,\n\t\t\t\t\t\t\t\"enterDate\":2021-03-19,\n\t\t\t\t\t\t\t\"leaveDate\":2021-03-19,\n\t\t\t\t\t\t\t\"payment\":67,\n\t\t\t\t\t\t\t\"money\":9.39,\n\t\t\t\t\t\t\t\"space\":{\n\t\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t],\n\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\"carId\":751,\n\t\t\t\t\t\t\"carNum\":\"26cxhx\",\n\t\t\t\t\t\t\"carOwner\":\"5jby1q\",\n\t\t\t\t\t\t\"carTimes\":358,\n\t\t\t\t\t\t\"space\":{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"member\":{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"recordList\":[\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t]\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"car\":{\n\t\t\t\t\t\"carId\":909,\n\t\t\t\t\t\"carNum\":\"c21hgi\",\n\t\t\t\t\t\"carOwner\":\"8ublt3\",\n\t\t\t\t\t\"carTimes\":307,\n\t\t\t\t\t\"space\":{\n\t\t\t\t\t\t\"spaceId\":387,\n\t\t\t\t\t\t\"spaceNum\":\"aajnn1\",\n\t\t\t\t\t\t\"spaceArea\":\"uvocjp\",\n\t\t\t\t\t\t\"spaceStatus\":374,\n\t\t\t\t\t\t\"spaceRemark\":110,\n\t\t\t\t\t\t\"recordList\":[\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t}\n\t\t\t\t\t},\n\t\t\t\t\t\"member\":{\n\t\t\t\t\t\t\"memberId\":710,\n\t\t\t\t\t\t\"openDate\":2021-03-19,\n\t\t\t\t\t\t\"endDate\":2021-03-19,\n\t\t\t\t\t\t\"memberType\":416,\n\t\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t}\n\t\t\t\t\t},\n\t\t\t\t\t\"recordList\":[\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"recordId\":544,\n\t\t\t\t\t\t\t\"enterDate\":2021-03-19,\n\t\t\t\t\t\t\t\"leaveDate\":2021-03-19,\n\t\t\t\t\t\t\t\"payment\":776,\n\t\t\t\t\t\t\t\"money\":72.06,\n\t\t\t\t\t\t\t\"space\":{\n\t\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"car\":{\n\t\t\t\t\t\t\t\t\"$ref\":\"...\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t]\n\t\t\t\t}\n\t\t\t}\n\t\t]\n\t}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "http://127.0.0.1/space/updateSpace",
+            "header": []
+          }
+        },
+        {
+          "request": {
+            "method": "GET",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "keyword",
+                  "type": "text",
+                  "desc": "No comments found.",
+                  "value": ""
+                },
+                {
+                  "key": "spaceRemark",
+                  "type": "text",
+                  "desc": "No comments found.",
+                  "value": "-1"
+                },
+                {
+                  "key": "spaceStatus",
+                  "type": "text",
+                  "desc": "No comments found.",
+                  "value": "-1"
+                },
+                {
+                  "key": "page",
+                  "type": "text",
+                  "desc": "No comments found.",
+                  "value": "0"
+                },
+                {
+                  "key": "limit",
+                  "type": "text",
+                  "desc": "No comments found.",
+                  "value": "10"
+                }
+              ]
+            },
+            "url": "http://127.0.0.1/space/listSpace?page\u003d0\u0026spaceRemark\u003d-1\u0026keyword\u003d\u0026limit\u003d10\u0026spaceStatus\u003d-1",
+            "header": []
+          }
+        }
+      ]
+    },
+    {
+      "item": [
+        {
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"userId\":487,\n\t\"username\":\"乐驹.黄\",\n\t\"password\":\"jzgg8p\",\n\t\"Role\":623\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "http://127.0.0.1/user/login",
+            "header": []
+          }
+        },
+        {
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"userId\":406,\n\t\"username\":\"乐驹.黄\",\n\t\"password\":\"8s1mn3\",\n\t\"Role\":73\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "http://127.0.0.1/user/update",
+            "header": []
+          }
+        }
+      ]
+    }
+  ]
+}
