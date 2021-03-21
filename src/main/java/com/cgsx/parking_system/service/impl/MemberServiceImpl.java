@@ -42,11 +42,12 @@ public class MemberServiceImpl implements MemberService {
                 /**
                  * 多表查询
                  */
-                Join<Member, Car> sroot = root.join("member", JoinType.LEFT);
+                Join<Member, Car> sroot = root.join("car", JoinType.LEFT);
                 if(StringUtils.isNotBlank(keyword)){
                     predicates.add(
                             criteriaBuilder.and(
                                     criteriaBuilder.or(
+                                            criteriaBuilder.like(root.get("memberId"),"%" + keyword + "%"),
                                             criteriaBuilder.like(sroot.get("carowner"),"%" + keyword + "%"),
                                             criteriaBuilder.like(sroot.get("carNum"),"%" + keyword + "%")
                                     )

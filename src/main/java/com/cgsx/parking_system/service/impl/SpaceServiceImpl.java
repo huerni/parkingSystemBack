@@ -52,7 +52,7 @@ public class SpaceServiceImpl implements SpaceService {
                 /**
                  * 多表查询
                  */
-                Join<Space, Car> sroot = root.join("space", JoinType.LEFT);
+                Join<Space, Car> sroot = root.join("car", JoinType.LEFT);
                 if(StringUtils.isNotBlank(keyword)){
                     predicates.add(
                             criteriaBuilder.and(

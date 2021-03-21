@@ -37,9 +37,9 @@ public class Space implements Serializable {
     // 车位备注 0:自由车位  1:固定车位
     private Integer spaceRemark;
 
-    @OneToMany
-    @JoinColumn(name = "space_id")
-    private List<Record> recordList = new ArrayList<>();
+//    @OneToMany
+//    @JoinColumn(name = "space_id")
+//    private List<Record> recordList = new ArrayList<>();
 
     @OneToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "car_id")

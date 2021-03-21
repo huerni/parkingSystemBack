@@ -30,16 +30,16 @@ public class Car implements Serializable {
     //车进入次数
     private Integer carTimes;
 
-    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    @JoinColumn(name = "space_id")
-    private Space space;
+//    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+//    @JoinColumn(name = "space_id")
+//    private Space space;
 
-    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id")
-    private Member member;
+//    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+//    @JoinColumn(name = "member_id")
+//    private Member member;
 
-    @OneToMany
-    @JoinColumn(name = "car_id")
-    private List<Record> recordList = new ArrayList<>();
+//    @OneToMany
+//    @JoinColumn(name = "car_id")
+//    private List<Record> recordList = new ArrayList<>();
 
 }

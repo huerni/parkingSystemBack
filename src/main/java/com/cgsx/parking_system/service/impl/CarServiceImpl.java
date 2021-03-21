@@ -40,7 +40,7 @@ public class CarServiceImpl implements CarService {
             @Override
             public Predicate toPredicate(Root<Car> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder) {
                 List<Predicate> predicates = new ArrayList<>();
-                Join<Car, Space> sroot = root.join("space", JoinType.LEFT);
+//                Join<Car, Space> sroot = root.join("space", JoinType.LEFT);
                 /**
                  * 多表查询
                  */
@@ -49,9 +49,9 @@ public class CarServiceImpl implements CarService {
                             criteriaBuilder.and(
                                     criteriaBuilder.or(
                                             criteriaBuilder.like(root.get("carNum"), "%" + keyword + "%"),
-                                            criteriaBuilder.like(root.get("carOwner"), "%" + keyword + "%"),
-                                            criteriaBuilder.like(root.get("spaceArea"),"%" + keyword + "%"),
-                                            criteriaBuilder.like(root.get("spaceNum"),"%" + keyword + "%")
+                                            criteriaBuilder.like(root.get("carOwner"), "%" + keyword + "%")
+//                                            criteriaBuilder.like(sroot.get("spaceArea"),"%" + keyword + "%"),
+//                                            criteriaBuilder.like(sroot.get("spaceNum"),"%" + keyword + "%")
                                     )
                             )
                     );
