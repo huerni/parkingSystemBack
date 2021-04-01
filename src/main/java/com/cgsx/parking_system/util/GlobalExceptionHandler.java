@@ -28,7 +28,7 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public Result eexceptionHandler( Exception e) {
         log.error("处理空指针异常");
-        return Result.otherError(ErrorEnum.NO_PERMISSION);
+        return Result.otherError(ErrorEnum.PARAM_IS_BLANK);
     }
 
     /**

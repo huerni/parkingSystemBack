@@ -22,16 +22,26 @@ public class UserController {
     @PostMapping("/login")
     public Result login(@RequestBody User user){
 //        System.out.println(user);
-        Result result = new Result();
         User user1 = userService.getUserByUserName(user.getUsername());
+        if(user1 == null)
+            throw new DefinitionException(400, "账号不存在");
         log.info("请求接口login,body:"+user.toString());
 //        System.out.println(user.getPassword());
         if(user1.getPassword().equals(user.getPassword())) {
-            return result.success("登陆成功", user);
+            return new Result().success("登陆成功", user);
         }
         else {
             throw new DefinitionException(400,"密码不正确");
         }
+    }
+
+    @RequestMapping("/listUser")
+    public Result listUser(
+            @RequestParam(name = "keyword", defaultValue = "") String keyword,
+            @RequestParam(name = "page", defaultValue = "0") int page,
+            @RequestParam(name = "limit", defaultValue = "10") int size
+    ){
+        return new Result().success("查询成功", userService.findAllUser(keyword, page, size));
     }
 
     @PostMapping("/update")

@@ -2,6 +2,7 @@ package com.cgsx.parking_system.service.impl;
 
 import com.cgsx.parking_system.entity.Car;
 import com.cgsx.parking_system.entity.Member;
+import com.cgsx.parking_system.entity.SpaceArea;
 import org.apache.commons.lang.StringUtils;
 import com.cgsx.parking_system.entity.Space;
 import com.cgsx.parking_system.repository.SpaceRepository;
@@ -40,8 +41,13 @@ public class SpaceServiceImpl implements SpaceService {
 
     @Override
     public Page<Space> getSpace(String keyword,Integer spaceRemark, Integer spaceStatus, int page, int size) {
-        Pageable pageable = PageRequest.of(page, size, Sort.Direction.DESC, "spaceId");
+        Pageable pageable = PageRequest.of(page, size, Sort.Direction.ASC, "spaceId");
         return spaceRepository.findAll(this.getWhereClause(keyword, spaceRemark, spaceStatus), pageable);
+    }
+
+    @Override
+    public Boolean existsSpace(SpaceArea spaceArea, String spaceNum) {
+        return spaceRepository.existsSpaceBySpaceAreaAndSpaceNum(spaceArea, spaceNum);
     }
 
     public Specification<Space> getWhereClause(String keyword, Integer spaceRemark, Integer spaceStatus){

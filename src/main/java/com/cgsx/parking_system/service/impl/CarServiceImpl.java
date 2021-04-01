@@ -25,7 +25,7 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public Page<Car> getCar(String keyword, int page, int size) {
-        Pageable pageable = PageRequest.of(page, size, Sort.Direction.DESC, "carId");
+        Pageable pageable = PageRequest.of(page, size, Sort.Direction.ASC, "carId");
         return carRepository.findAll(this.getWhereClause(keyword), pageable);
     }
 

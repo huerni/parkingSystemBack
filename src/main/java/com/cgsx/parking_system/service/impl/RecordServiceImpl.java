@@ -14,7 +14,9 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.criteria.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service 
@@ -25,8 +27,14 @@ public class RecordServiceImpl implements RecordService {
 
     @Override
     public Page<Record> getRecode(String keyword, int payment, int page, int size) {
-        Pageable pageable = PageRequest.of(page, size, Sort.Direction.DESC, "recordId");
+        Pageable pageable = PageRequest.of(page, size, Sort.Direction.ASC, "recordId");
         return recordRepository.findAll(this.getWhereClause(keyword, payment), pageable);
+    }
+
+    @Override
+    public Page<Record> getRecordByEnterDateBetween(Date start, Date end, int page, int size) {
+        Pageable pageable = PageRequest.of(page, size, Sort.Direction.ASC, "recordId");
+        return recordRepository.findAllByEnterDateBetween(start, end, pageable);
     }
 
     public Specification<Record> getWhereClause(String keyword, int payment){

@@ -28,14 +28,14 @@ public class Space implements Serializable {
     // 车位编号
     private String spaceNum;
 
-    // 车位区域
-    private String spaceArea;
-
     // 车位状态 0:未占用  1:已占用  2:已下线
     private Integer spaceStatus;
 
     // 车位备注 0:自由车位  1:固定车位
     private Integer spaceRemark;
+
+    // 是否上线
+    private Integer isOnline;
 
 //    @OneToMany
 //    @JoinColumn(name = "space_id")
@@ -44,5 +44,9 @@ public class Space implements Serializable {
     @OneToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "car_id")
     private Car car;
+
+    @OneToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name = "space_area_id")
+    private SpaceArea spaceArea;
 
 }

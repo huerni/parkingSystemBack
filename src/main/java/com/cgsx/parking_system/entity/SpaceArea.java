@@ -8,26 +8,19 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /**
- * 管理员db
+ * 车位区域db
  */
 @Entity
+@Table(name = "spaceArea")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User implements Serializable {
-    private static final long serialVersionUID = 1307836233485877458L;
+public class SpaceArea implements Serializable {
+    private static final long serialVersionUID = 7738856200213007655L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long userId;
+    private Long spaceAreaId;
 
-    @Column(nullable = false, unique = true)
-    String username;
-
-    @Column(nullable = false)
-    String password;
-
-
-    @Column(nullable = false)
-    String role;
+    private String area;
 }

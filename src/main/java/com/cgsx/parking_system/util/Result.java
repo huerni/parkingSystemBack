@@ -57,15 +57,4 @@ public class Result<T> {
 
         return result;
     }
-
-    public Result fail(String msg, Object data){
-
-        Result result = new Result();
-        result.setSuccess(false);
-        result.setCode(403);
-        result.setMsg(msg);
-        result.setData(data);
-
-        return result;
-    }
 }

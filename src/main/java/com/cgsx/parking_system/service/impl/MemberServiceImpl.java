@@ -20,12 +20,13 @@ import java.util.List;
 
 @Service
 public class MemberServiceImpl implements MemberService {
+
     @Autowired
     private MemberRepository memberRepository;
 
     @Override
     public Page<Member> getMember(String keyword, int type, int page, int size) {
-        Pageable pageable = PageRequest.of(page, size, Sort.Direction.DESC, "memberId");
+        Pageable pageable = PageRequest.of(page, size, Sort.Direction.ASC, "memberId");
         return memberRepository.findAll(this.getWhereClause(keyword, type), pageable);
     }
 
@@ -47,8 +48,8 @@ public class MemberServiceImpl implements MemberService {
                     predicates.add(
                             criteriaBuilder.and(
                                     criteriaBuilder.or(
-                                            criteriaBuilder.like(root.get("memberId"),"%" + keyword + "%"),
-                                            criteriaBuilder.like(sroot.get("carowner"),"%" + keyword + "%"),
+//                                            criteriaBuilder.like(root.get("memberId"),"%" + keyword + "%"),
+                                            criteriaBuilder.like(sroot.get("carOwner"),"%" + keyword + "%"),
                                             criteriaBuilder.like(sroot.get("carNum"),"%" + keyword + "%")
                                     )
                             )
