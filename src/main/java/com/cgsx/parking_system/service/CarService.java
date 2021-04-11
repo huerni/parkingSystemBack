@@ -8,4 +8,6 @@ public interface CarService {
     public Page<Car> getCar(String keyword,  int page, int size);
 
     public void updateCar(Car car);
+
+    Car getCarByCarNum(String carNum);
 }

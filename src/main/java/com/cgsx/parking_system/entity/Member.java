@@ -39,11 +39,11 @@ public class Member implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm",timezone = "GMT+8")
     private Date endDate;
 
-    private String memberName;
+    private String phone;
 
-    private String password;
+    private Integer money;
 
-    // 1:月租卡 2:年租卡  3:固定车
+    // 1:月租卡 2:年租卡
     private Integer memberType;
 
     @OneToOne

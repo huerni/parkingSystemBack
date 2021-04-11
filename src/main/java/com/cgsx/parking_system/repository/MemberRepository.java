@@ -9,4 +9,6 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 public interface MemberRepository extends JpaRepository<Member, Long>, JpaSpecificationExecutor<Member> {
 
     Page<Member> findAll(Pageable pageable);
+
+    Member getMemberByPhone(String phone);
 }

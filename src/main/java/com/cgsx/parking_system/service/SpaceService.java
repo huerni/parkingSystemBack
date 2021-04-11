@@ -10,7 +10,7 @@ public interface SpaceService {
 
     void updateSpace(Space space);
 
-    Page<Space> getSpace(String keyword, Integer spaceRemark, Integer spaceStatus, int page, int size);
+    Page<Space> getSpace(String keyword, Integer spaceStatus, int page, int size);
 
     public Boolean existsSpace(SpaceArea spaceArea, String spaceNum);
 }

@@ -9,6 +9,10 @@ public enum ErrorEnum {
     NO_AUTH(402,"你未登录，请登录先！"),
     NO_PERMISSION(403,"没有权限！"),
     USER_ACCOOUT_ELSE(405, "您的账号在异地登录,可能由于密码泄露，建议修改密码"),
+    CAR_EXIST(406, "车牌号已存在"),
+    CAR_OWNER_ERROR(407, "车牌号与车主不符合"),
+    SPACE_FULL_ERROR(408, "没有剩余车位！"),
+    SPACE_CAR_EXIST(409, "该车位停有车，无法下线！"),
 
     NOT_FOUND(404, "未找到该资源!"),
 

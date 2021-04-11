@@ -34,6 +34,11 @@ public class CarServiceImpl implements CarService {
         carRepository.save(car);
     }
 
+    @Override
+    public Car getCarByCarNum(String carNum) {
+        return carRepository.getCarByCarNum(carNum);
+    }
+
 
     public Specification<Car> getWhereClause(String keyword) {
         return new Specification<Car>() {

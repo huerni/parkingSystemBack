@@ -35,6 +35,11 @@ public class MemberServiceImpl implements MemberService {
         memberRepository.save(member);
     }
 
+    @Override
+    public Member getMemberByPhone(String phone) {
+        return memberRepository.getMemberByPhone(phone);
+    }
+
     public Specification<Member> getWhereClause(String keyword, int type){
         return new Specification<Member>() {
             @Override
@@ -48,7 +53,7 @@ public class MemberServiceImpl implements MemberService {
                     predicates.add(
                             criteriaBuilder.and(
                                     criteriaBuilder.or(
-//                                            criteriaBuilder.like(root.get("memberId"),"%" + keyword + "%"),
+//                                            criteriaBuilder.like(root.get("phone"),"%" + keyword + "%"),
                                             criteriaBuilder.like(sroot.get("carOwner"),"%" + keyword + "%"),
                                             criteriaBuilder.like(sroot.get("carNum"),"%" + keyword + "%")
                                     )

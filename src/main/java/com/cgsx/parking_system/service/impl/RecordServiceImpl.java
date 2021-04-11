@@ -26,7 +26,7 @@ public class RecordServiceImpl implements RecordService {
     private RecordRepository recordRepository;
 
     @Override
-    public Page<Record> getRecode(String keyword, int payment, int page, int size) {
+    public Page<Record> getRecode(String keyword,  int payment, int page, int size) {
         Pageable pageable = PageRequest.of(page, size, Sort.Direction.ASC, "recordId");
         return recordRepository.findAll(this.getWhereClause(keyword, payment), pageable);
     }
@@ -35,6 +35,22 @@ public class RecordServiceImpl implements RecordService {
     public Page<Record> getRecordByEnterDateBetween(Date start, Date end, int page, int size) {
         Pageable pageable = PageRequest.of(page, size, Sort.Direction.ASC, "recordId");
         return recordRepository.findAllByEnterDateBetween(start, end, pageable);
+    }
+
+    @Override
+    public Page<Record> getRecordByLeaveDateBetween(Date start, Date end, int page, int size) {
+        Pageable pageable = PageRequest.of(page, size, Sort.Direction.ASC, "recordId");
+        return recordRepository.findAllByLeaveDateBetween(start, end, pageable);
+    }
+
+    @Override
+    public Record getRecordByCarAndLeaveDate(Car car, Date leaveDate) {
+        return recordRepository.findRecordByCarAndLeaveDate(car, leaveDate);
+    }
+
+    @Override
+    public void updateRecord(Record record) {
+        recordRepository.save(record);
     }
 
     public Specification<Record> getWhereClause(String keyword, int payment){
@@ -61,6 +77,7 @@ public class RecordServiceImpl implements RecordService {
                 }
                 if(payment != -1)
                     predicates.add(criteriaBuilder.equal(root.get("payment"), payment));
+
                 Predicate[] pre = new Predicate[predicates.size()];
                 return criteriaQuery.where(predicates.toArray(pre)).getRestriction();
             }

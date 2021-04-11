@@ -8,4 +8,6 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 public interface CarRepository extends JpaRepository<Car, Long>, JpaSpecificationExecutor<Car> {
     Page<Car> findAll(Pageable pageable);
+
+    Car getCarByCarNum(String carNum);
 }

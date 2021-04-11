@@ -4,7 +4,6 @@ public class Constants {
 
     public static Integer ADMIN = 0;
     public static Integer SYSADMIN = 1;
-    public static Integer MEMBER = 2;
 
     public static Integer CONSTANT_YES = 1;
     public static Integer CONSTANT_NO = 0;

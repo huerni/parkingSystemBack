@@ -38,7 +38,7 @@ public class Record implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm",timezone = "GMT+8")
     private Date leaveDate;
 
-    // 0:临时支付  1:月租卡  2:年租卡  3:固定车
+    // 0:临时支付  1:月租卡  2:年租卡
     private Integer payment;
 
     private Float money;

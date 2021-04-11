@@ -40,9 +40,9 @@ public class SpaceServiceImpl implements SpaceService {
     }
 
     @Override
-    public Page<Space> getSpace(String keyword,Integer spaceRemark, Integer spaceStatus, int page, int size) {
+    public Page<Space> getSpace(String keyword, Integer spaceStatus, int page, int size) {
         Pageable pageable = PageRequest.of(page, size, Sort.Direction.ASC, "spaceId");
-        return spaceRepository.findAll(this.getWhereClause(keyword, spaceRemark, spaceStatus), pageable);
+        return spaceRepository.findAll(this.getWhereClause(keyword, spaceStatus), pageable);
     }
 
     @Override
@@ -50,7 +50,7 @@ public class SpaceServiceImpl implements SpaceService {
         return spaceRepository.existsSpaceBySpaceAreaAndSpaceNum(spaceArea, spaceNum);
     }
 
-    public Specification<Space> getWhereClause(String keyword, Integer spaceRemark, Integer spaceStatus){
+    public Specification<Space> getWhereClause(String keyword, Integer spaceStatus){
         return new Specification<Space>() {
             @Override
             public Predicate toPredicate(Root<Space> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder) {
@@ -59,11 +59,12 @@ public class SpaceServiceImpl implements SpaceService {
                  * 多表查询
                  */
                 Join<Space, Car> sroot = root.join("car", JoinType.LEFT);
+                Join<Space, SpaceArea> spaceAreaJoin = root.join("spaceArea", JoinType.LEFT);
                 if(StringUtils.isNotBlank(keyword)){
                     predicates.add(
                             criteriaBuilder.and(
                                     criteriaBuilder.or(
-                                            criteriaBuilder.like(root.get("spaceArea"),"%" + keyword + "%"),
+                                            criteriaBuilder.like(spaceAreaJoin.get("area"),"%" + keyword + "%"),
                                             criteriaBuilder.like(root.get("spaceNum"),"%" + keyword + "%"),
                                             criteriaBuilder.like(sroot.get("carNum"), "%" + keyword + "%"),
                                             criteriaBuilder.like(sroot.get("carOwner"), "%" + keyword + "%")
@@ -71,8 +72,6 @@ public class SpaceServiceImpl implements SpaceService {
                             )
                     );
                 }
-                if(spaceRemark != -1)
-                    predicates.add(criteriaBuilder.equal(root.get("spaceRemark"), spaceRemark));
                 if(spaceStatus != -1)
                     predicates.add(criteriaBuilder.equal(root.get("spaceStatus"), spaceStatus));
                 Predicate[] pre = new Predicate[predicates.size()];

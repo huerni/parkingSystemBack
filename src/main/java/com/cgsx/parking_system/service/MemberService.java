@@ -9,4 +9,6 @@ public interface MemberService {
     Page<Member> getMember(String keyword, int type, int page, int size);
 
     void updateMember(Member member);
+
+    Member getMemberByPhone(String phone);
 }

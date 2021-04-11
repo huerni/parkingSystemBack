@@ -54,8 +54,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable();
-        http.authorizeRequests().
-                and().formLogin(). //登入
+        http.authorizeRequests()
+                .antMatchers("/member/memberLogin").permitAll()
+                .antMatchers("/member/updateMember").permitAll()
+                .antMatchers("/spaceArea/listSpaceArea").permitAll()
+                .antMatchers("/space/listSpace").permitAll()
+                .antMatchers("/car/license").permitAll()
+                .antMatchers("/chart/lineData").permitAll()
+                .and().formLogin().//登入
                 permitAll().//允许所有用户
                 successHandler(authenticationSuccessHandler).//登录成功处理逻辑
                 failureHandler(authenticationFailureHandler).//登录失败处理逻辑

@@ -19,20 +19,10 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/login")
-    public Result login(@RequestBody User user){
-//        System.out.println(user);
-        User user1 = userService.getUserByUserName(user.getUsername());
-        if(user1 == null)
-            throw new DefinitionException(400, "账号不存在");
-        log.info("请求接口login,body:"+user.toString());
-//        System.out.println(user.getPassword());
-        if(user1.getPassword().equals(user.getPassword())) {
-            return new Result().success("登陆成功", user);
-        }
-        else {
-            throw new DefinitionException(400,"密码不正确");
-        }
+    @RequestMapping("/info")
+    public Result getInfo(@RequestParam(name = "token") String username){
+        log.info("【用户信息接口】:" + username);
+        return new Result().success("成功", userService.getUserByUserName(username));
     }
 
     @RequestMapping("/listUser")

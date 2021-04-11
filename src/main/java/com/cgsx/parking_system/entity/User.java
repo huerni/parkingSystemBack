@@ -27,7 +27,6 @@ public class User implements Serializable {
     @Column(nullable = false)
     String password;
 
-
     @Column(nullable = false)
     String role;
 }
