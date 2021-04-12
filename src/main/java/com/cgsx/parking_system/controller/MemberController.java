@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.temporal.ChronoUnit;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -57,7 +58,8 @@ public class MemberController {
             member.setCar(car);
         }
 //        long daysDiff = ChronoUnit.DAYS.between(member.getOpenDate(), member.getEndDate());
-        chartDataService.updateChartData(new Date().getYear(), new Date().getMonth(), member.getMemberType(), member.getMoney());
+        Calendar calendar = Calendar.getInstance();
+        chartDataService.updateChartData(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH) + 1, member.getMemberType(), member.getMoney());
         memberService.updateMember(member);
         log.info("请求接口updateMember,body:"+member.toString());
         return new Result().success("充值成功", member);

@@ -10,4 +10,5 @@ public interface CarRepository extends JpaRepository<Car, Long>, JpaSpecificatio
     Page<Car> findAll(Pageable pageable);
 
     Car getCarByCarNum(String carNum);
+
 }

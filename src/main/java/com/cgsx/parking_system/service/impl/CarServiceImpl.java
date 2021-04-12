@@ -39,6 +39,12 @@ public class CarServiceImpl implements CarService {
         return carRepository.getCarByCarNum(carNum);
     }
 
+    @Override
+    public Page<Car> getCarBySort(int page, int size, String sorts) {
+        Pageable pageable = PageRequest.of(page, size, Sort.Direction.DESC, sorts);
+        return carRepository.findAll(pageable);
+    }
+
 
     public Specification<Car> getWhereClause(String keyword) {
         return new Specification<Car>() {

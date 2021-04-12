@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
+
 import static java.util.Arrays.asList;
 
 @RestController
@@ -32,10 +32,14 @@ public class ChartController {
 
 
     @RequestMapping("/cakeData")
-    public Result cakeData(){
-        Date start1 = new Date(), end1 = new Date();
-        end1.setHours(end1.getHours()+24);
-        Page<Record> recordPage = recordService.getRecordByLeaveDateBetween(start1, end1,  0, 10000);
+    public Result cakeData( @RequestParam(name = "start", defaultValue = "")String start,
+                            @RequestParam(name = "end", defaultValue = "")String end) throws ParseException {
+        SimpleDateFormat  dateTimeFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date start1 , end1;
+        start1 = dateTimeFormat.parse(start);
+        end1 = dateTimeFormat.parse(end);
+        log.info("【饼图数据接口】"+"开始时间:"+start+",结束时间:"+end);
+        Page<Record> recordPage = recordService.getRecordByEnterDateBetween(start1, end1,  0, 10000);
         int typePa = 0, typeMon = 0, typeYear = 0;
         if(recordPage.getTotalElements() > 0) {
             for (Record record : recordPage.getContent()) {

@@ -60,6 +60,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/spaceArea/listSpaceArea").permitAll()
                 .antMatchers("/space/listSpace").permitAll()
                 .antMatchers("/car/license").permitAll()
+                .antMatchers("/car/listSortCar").permitAll()
                 .antMatchers("/chart/lineData").permitAll()
                 .and().formLogin().//登入
                 permitAll().//允许所有用户

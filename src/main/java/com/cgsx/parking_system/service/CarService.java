@@ -10,4 +10,6 @@ public interface CarService {
     public void updateCar(Car car);
 
     Car getCarByCarNum(String carNum);
+
+    Page<Car> getCarBySort(int page, int size, String sorts);
 }

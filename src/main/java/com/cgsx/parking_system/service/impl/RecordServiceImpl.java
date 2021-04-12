@@ -27,7 +27,7 @@ public class RecordServiceImpl implements RecordService {
 
     @Override
     public Page<Record> getRecode(String keyword,  int payment, int page, int size) {
-        Pageable pageable = PageRequest.of(page, size, Sort.Direction.ASC, "recordId");
+        Pageable pageable = PageRequest.of(page, size, Sort.Direction.DESC, "enterDate");
         return recordRepository.findAll(this.getWhereClause(keyword, payment), pageable);
     }
 
@@ -39,7 +39,7 @@ public class RecordServiceImpl implements RecordService {
 
     @Override
     public Page<Record> getRecordByLeaveDateBetween(Date start, Date end, int page, int size) {
-        Pageable pageable = PageRequest.of(page, size, Sort.Direction.ASC, "recordId");
+        Pageable pageable = PageRequest.of(page, size, Sort.Direction.DESC, "enterDate");
         return recordRepository.findAllByLeaveDateBetween(start, end, pageable);
     }
 

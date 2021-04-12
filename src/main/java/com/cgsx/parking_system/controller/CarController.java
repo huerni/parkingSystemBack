@@ -19,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
 import java.util.regex.Matcher;
@@ -58,6 +59,14 @@ public class CarController {
         return new Result().success("查询成功", carService.getCar(keyword, pageNumber, pageSize));
     }
 
+    @RequestMapping("/listSortCar")
+    public Result listSortCar(@RequestParam(name = "page", defaultValue = "0")Integer pageNumber,
+                              @RequestParam(name = "limit", defaultValue = "10")Integer pageSize,
+                              @RequestParam(name = "sorts", defaultValue = "carTimes")String sorts){
+        log.info("【车辆排序接口】:pageNumber:"+pageNumber+",pageSize:"+pageSize+",sorts:"+sorts);
+        return new Result().success("查询成功", carService.getCarBySort(pageNumber, pageSize, sorts));
+    }
+
     @PostMapping("/license")
     public Result license(MultipartFile file) throws IOException {
         String realFileName = file.getOriginalFilename();
@@ -73,6 +82,7 @@ public class CarController {
         license = StrUnicodeToUtf8.unicodeToUtf8(license);
         license = license.substring(1, license.length()-1);
         log.info(license);
+//        license = "黑GFQR4N";
         Pattern pattern = Pattern.compile("^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-Z0-9]{4}[A-Z0-9挂学警港澳]{1}$");
         Matcher matcher = pattern.matcher(license);
         // 有车 识别成功
@@ -109,7 +119,6 @@ public class CarController {
                 } else {
                     record.setPayment(0);
                 }
-
                 spaceService.updateSpace(space);
                 log.info("【入口接口】车牌号:"+license+", 停车位置："+ space.getSpaceArea().getArea()+space.getSpaceNum()+"号");
             }
@@ -117,24 +126,25 @@ public class CarController {
                 long start = record.getEnterDate().getTime();
                 long end = new Date().getTime();
                 int hours = (int) ((end - start)/(1000 * 60 * 60));
+                Calendar calendar = Calendar.getInstance();
                 if(memberPage.getTotalElements() == 0){
-                    chartDataService.updateChartData(new Date().getYear(), new Date().getMonth(), 0, (hours * 5));
-                    record.setMoney((float) (hours * 5));
+                    chartDataService.updateChartData(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH) + 1, 0, (hours * 5)+2);
+                    record.setMoney((float) (hours * 5)+2);
                 }else {
                     Member member = memberPage.getContent().get(0);
                     if(member.getEndDate().getTime() >= new Date().getTime()){
 //                        record.setPayment(member.getMemberType());
                         if(member.getMemberType() == 1){
-                            chartDataService.updateChartData(new Date().getYear(), new Date().getMonth(), 1, (hours * 3));
-                            record.setMoney((float) (hours * 3));
+                            chartDataService.updateChartData(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH) + 1, 1, (hours * 3)+2);
+                            record.setMoney((float) (hours * 3)+2);
                         }else if(member.getMemberType() == 2){
-                            chartDataService.updateChartData(new Date().getYear(), new Date().getMonth(), 2, (hours * 2));
-                            record.setMoney((float)(hours * 2));
+                            chartDataService.updateChartData(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH) + 1, 2, (hours * 2)+2);
+                            record.setMoney((float)(hours * 2)+2);
                         }
                     } else {
 //                        record.setPayment(0);
-                        chartDataService.updateChartData(new Date().getYear(), new Date().getMonth(), 0, (hours * 5));
-                        record.setMoney((float) (hours * 5));
+                        chartDataService.updateChartData(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH) + 1, 0, (hours * 5)+2);
+                        record.setMoney((float) (hours * 5)+2);
                     }
                 }
                 Space space = record.getSpace();
@@ -146,9 +156,9 @@ public class CarController {
                 log.info("【出口接口】车牌号："+license+",会员类别："+record.getPayment()+"花费"+record.getMoney());
             }
             recordService.updateRecord(record);
-            return new Result().success("识别成功", car);
+            return new Result().success("识别成功", record);
         }
         log.info("车牌识别错误");
-        return Result.otherError(ErrorEnum.SPACE_FULL_ERROR);
+        return null;
     }
 }
