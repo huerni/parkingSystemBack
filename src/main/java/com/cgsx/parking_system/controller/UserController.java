@@ -6,6 +6,7 @@ import com.cgsx.parking_system.util.DefinitionException;
 import com.cgsx.parking_system.util.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -31,6 +32,7 @@ public class UserController {
             @RequestParam(name = "page", defaultValue = "0") int page,
             @RequestParam(name = "limit", defaultValue = "10") int size
     ){
+        log.info("【用户列表接口】:keyword:"+keyword+"page:"+page+"limit:"+size);
         return new Result().success("查询成功", userService.findAllUser(keyword, page, size));
     }
 
@@ -44,6 +46,9 @@ public class UserController {
     @PostMapping("/addUser")
     public Result addUser(@RequestBody User user){
         log.info("请求接口addUser,body:"+user.toString());
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(10);
+        String encodePassword = encoder.encode(user.getPassword());
+        user.setPassword(encodePassword);
         if(userService.getUserByUserName(user.getUsername()) != null){
             throw new DefinitionException(400, "用户名已存在");
         }

@@ -40,8 +40,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public static NoOpPasswordEncoder passwordEncoder() {
-        return (NoOpPasswordEncoder) NoOpPasswordEncoder.getInstance();
+    public static BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder(10);
     }
 
 
@@ -62,6 +62,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/car/license").permitAll()
                 .antMatchers("/car/listSortCar").permitAll()
                 .antMatchers("/chart/lineData").permitAll()
+                .antMatchers("/user/addUser").hasAnyRole("SYSADMIN")
+                .antMatchers("/space/addSpace").hasAnyRole("SYSADMIN")
+                .antMatchers("/user/listUser").hasAnyRole("SYSADMIN")
                 .and().formLogin().//登入
                 permitAll().//允许所有用户
                 successHandler(authenticationSuccessHandler).//登录成功处理逻辑

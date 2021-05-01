@@ -52,7 +52,9 @@ public class UserServiceImpl implements UserService {
                     predicates.add(
                             criteriaBuilder.and(
                                     criteriaBuilder.or(
-                                            criteriaBuilder.like(root.get("username"),"%" + keyword + "%")
+                                            criteriaBuilder.like(root.get("username"),"%" + keyword + "%"),
+                                            criteriaBuilder.like(root.get("trueName"),"%" + keyword + "%"),
+                                            criteriaBuilder.like(root.get("role"),"%" + keyword + "%")
                                     )
                             )
                     );
