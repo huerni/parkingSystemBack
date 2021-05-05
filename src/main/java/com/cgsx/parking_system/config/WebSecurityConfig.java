@@ -65,6 +65,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/addUser").hasAnyRole("SYSADMIN")
                 .antMatchers("/space/addSpace").hasAnyRole("SYSADMIN")
                 .antMatchers("/user/listUser").hasAnyRole("SYSADMIN")
+                .antMatchers("/user/update").hasAnyRole("SYSADMIN")
                 .and().formLogin().//登入
                 permitAll().//允许所有用户
                 successHandler(authenticationSuccessHandler).//登录成功处理逻辑

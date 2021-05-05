@@ -43,6 +43,16 @@ public class UserController {
         return new Result().success("更新成功", user);
     }
 
+    @PostMapping("/alterPassword")
+    public Result alterPassword(@RequestBody User user){
+        log.info("【修改密码接口】,body:"+user.toString());
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(10);
+        String encodePassword = encoder.encode(user.getPassword());
+        user.setPassword(encodePassword);
+        userService.updateUser(user);
+        return new Result().success("更新成功", user);
+    }
+
     @PostMapping("/addUser")
     public Result addUser(@RequestBody User user){
         log.info("请求接口addUser,body:"+user.toString());
