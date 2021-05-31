@@ -13,6 +13,7 @@ public enum ErrorEnum {
     CAR_OWNER_ERROR(407, "车牌号与车主不符合"),
     SPACE_FULL_ERROR(408, "没有剩余车位！"),
     SPACE_CAR_EXIST(409, "该车位停有车，无法下线！"),
+    LICENSE_ERROR(410, "识别错误"),
 
     NOT_FOUND(404, "未找到该资源!"),
 

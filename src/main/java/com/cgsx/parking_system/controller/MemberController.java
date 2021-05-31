@@ -47,13 +47,21 @@ public class MemberController {
     public Result updateMember(@RequestBody Member member){
         Car car = carService.getCarByCarNum(member.getCar().getCarNum());
         Member member1 = memberService.getMemberByPhone(member.getPhone());
-        if(car != null && !car.getCarOwner().equals(member.getCar().getCarOwner()))
+        log.info("请求接口updateMember,body:"+member.toString());
+        log.info(car.toString());
+        if(car != null && car.getCarOwner()!= null && !car.getCarOwner().equals(member.getCar().getCarOwner())) {
             return Result.otherError(ErrorEnum.CAR_OWNER_ERROR);
-        if(car == null)
+        }
+        if(car == null) {
             carService.updateCar(member.getCar());
+        }
         else {
-            if(member1 == null){
-                return Result.otherError(ErrorEnum.CAR_EXIST);
+//            if(member1 == null){
+//                return Result.otherError(ErrorEnum.CAR_EXIST);
+//            }
+            if(car.getCarOwner() == null){
+                car.setCarOwner(member.getCar().getCarOwner());
+                carService.updateCar(car);
             }
             member.setCar(car);
         }

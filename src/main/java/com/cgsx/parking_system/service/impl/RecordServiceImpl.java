@@ -62,16 +62,18 @@ public class RecordServiceImpl implements RecordService {
                  * 多表查询
                  */
                 Join<Record, Car> carJoin = root.join("car", JoinType.LEFT);
-                Join<Record, Space> spaceJoin = root.join("space", JoinType.LEFT);
+//                Join<Record, Space> spaceJoin = root.join("space", JoinType.LEFT);
                 if(StringUtils.isNotBlank(keyword)){
                     predicates.add(
                             criteriaBuilder.and(
                                     criteriaBuilder.or(
                                             criteriaBuilder.like(carJoin.get("carOwner"),"%" + keyword + "%"),
-                                            criteriaBuilder.like(carJoin.get("carNum"),"%" + keyword + "%"),
-                                            criteriaBuilder.like(spaceJoin.get("spaceNum"), "%" + keyword + "%"),
-                                            criteriaBuilder.like(spaceJoin.get("spaceArea"), "%" + keyword + "%")
+                                            criteriaBuilder.like(carJoin.get("carNum"),"%" + keyword + "%")
                                     )
+//                                    criteriaBuilder.or(
+////                                            criteriaBuilder.like(spaceJoin.get("spaceNum"), "%" + keyword + "%"),
+////                                            criteriaBuilder.like(spaceJoin.get("spaceArea"), "%" + keyword + "%")
+//                                    )
                             )
                     );
                 }

@@ -159,6 +159,6 @@ public class CarController {
             return new Result().success("识别成功", record);
         }
         log.info("车牌识别错误");
-        return null;
+        return Result.otherError(ErrorEnum.LICENSE_ERROR);
     }
 }
